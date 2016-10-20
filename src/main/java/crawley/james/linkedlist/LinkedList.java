@@ -121,7 +121,13 @@ public class LinkedList {
 
     public LinkedList copy () {
 
-        return null;
+        LinkedList list = new LinkedList();
+
+        for (int i = 0; i < size; i++) {
+            list.add(this.get(i));
+        }
+
+        return list;
 
     }
 
