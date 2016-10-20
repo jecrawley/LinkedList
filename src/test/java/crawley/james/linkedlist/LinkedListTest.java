@@ -16,7 +16,7 @@ public class LinkedListTest {
 
         linkedList.add(1);
 
-        assertEquals("The added value of 1 should be returned.", 1, linkedList.get(0));
+        assertEquals("The added value of 1 should be returned.", 1, linkedList.get(0).getValue());
 
     }
 
@@ -45,7 +45,7 @@ public class LinkedListTest {
         linkedList.add(2);
         linkedList.add(3);
 
-        assertEquals("The added value of 3 should be returned.", 3, linkedList.get(2));
+        assertEquals("The added value of 3 should be returned.", 3, linkedList.get(2).getValue());
 
     }
 
@@ -55,7 +55,7 @@ public class LinkedListTest {
         linkedList.add(2);
         linkedList.remove(0);
 
-        assertEquals("The value 1 should have been removed so that 2 took its place.", 2, linkedList.get(0));
+        assertEquals("The value 1 should have been removed so that 2 took its place.", 2, linkedList.get(0).getValue());
 
     }
 

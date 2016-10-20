@@ -103,19 +103,19 @@ public class LinkedList {
 
     }
 
-    public int get (int index) {
+    public Node get (int index) {
 
         Node search = head;
 
         if (index == 0) {
-            return head.value;
+            return head;
         }
 
         for (int i = 0; i < index; i++) {
             search = search.next;
         }
 
-        return search.value;
+        return search;
 
     }
 
@@ -124,7 +124,7 @@ public class LinkedList {
         LinkedList list = new LinkedList();
 
         for (int i = 0; i < size; i++) {
-            list.add(this.get(i));
+            list.add(this.get(i).value);
         }
 
         return list;
@@ -132,6 +132,35 @@ public class LinkedList {
     }
 
     public void sort () {
+
+        boolean changed;
+        Node temp0;
+        Node temp1;
+        Node temp2;
+
+        do {
+            changed = false;
+            for (int i = 0; i < size - 1; i++) {
+                temp0 = this.get(i);
+                temp1 = this.get(i + 1);
+                temp2 = this.get(i - 1);
+                if (temp0.value > temp1.value) {
+
+                    if (i == 0) {
+                        temp0.next = temp1.next;
+                        temp1.next = temp0;
+                        head = temp1;
+                    } else {
+                        temp0.next = temp1.next;
+                        temp1.next = temp0;
+                        temp2.next = temp1;
+                    }
+
+                    changed = true;
+                }
+            }
+
+        } while (changed);
 
     }
 
