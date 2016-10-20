@@ -99,8 +99,9 @@ public class LinkedListTest {
 
         linkedList.add(1);
         linkedList.add(2);
+        linkedList.remove(1);
 
-        assertEquals("The size should be 2", 2, linkedList.size());
+        assertEquals("The size should be 1", 1, linkedList.size());
     }
 
     @Test

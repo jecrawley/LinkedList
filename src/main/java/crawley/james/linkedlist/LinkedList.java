@@ -57,6 +57,7 @@ public class LinkedList {
         }
 
         search.next = search.next.next;
+        size--;
 
     }
 
