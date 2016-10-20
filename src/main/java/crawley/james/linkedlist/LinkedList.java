@@ -7,6 +7,7 @@ public class LinkedList {
 
     private int size;
     private Node head;
+    private Node tail;
     private Node current;
 
     class Node {
@@ -34,6 +35,7 @@ public class LinkedList {
 
         }
 
+        tail = current;
         size++;
     }
 
@@ -56,8 +58,7 @@ public class LinkedList {
 
     public boolean contains (int value) {
 
-        return false;
-
+        return (find(value) == -1) ? false : true;
     }
 
     public boolean containsInOrder (int... values) {
@@ -78,8 +79,18 @@ public class LinkedList {
 
     public int find (int value) {
 
-        return -1;
+        Node search = head;
 
+        for (int i = 0; i < size; i++) {
+
+            if (search.value == value) {
+                return i;
+            }
+
+            search = search.next;
+        }
+
+        return -1;
     }
 
     public int size () {

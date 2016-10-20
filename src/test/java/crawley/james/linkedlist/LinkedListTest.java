@@ -56,8 +56,10 @@ public class LinkedListTest {
     public void containsTest () {
 
         linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
 
-        assertTrue("The value 1 should be in the list", linkedList.contains(1));
+        assertTrue("The value 3 should be in the list", linkedList.contains(3));
 
 
     }
@@ -67,6 +69,7 @@ public class LinkedListTest {
 
         linkedList.add(1);
         linkedList.add(2);
+        linkedList.add(3);
 
         assertEquals("2 should be at index 1", 1, linkedList.find(2));
 
@@ -87,10 +90,11 @@ public class LinkedListTest {
 
         linkedList.add(1);
         linkedList.add(2);
+        linkedList.add(3);
         LinkedList linkedList1 = linkedList.copy();
 
         assertNotEquals("The lists should not be the same", linkedList, linkedList1);
-        assertTrue("The values should be ordered as 1, 2.", linkedList1.containsInOrder(1, 2));
+        assertTrue("The values should be ordered as 1, 2, 3.", linkedList1.containsInOrder(1, 2, 3));
 
     }
 
