@@ -39,6 +39,19 @@ public class LinkedList {
 
     public void remove (int index) {
 
+        Node search = head;
+
+        if (index == 0) {
+            head = search.next;
+        } else {
+
+            for (int i = 0; i < index - 1; i++) {
+                search = search.next;
+            }
+        }
+
+        search.next = search.next.next;
+
     }
 
     public boolean contains (int value) {
@@ -49,7 +62,18 @@ public class LinkedList {
 
     public boolean containsInOrder (int... values) {
 
-        return false;
+        int length = values.length;
+        Node search = head;
+
+        for (int i = 0; i < length; i++) {
+
+            if (search.value != values[i]) {
+                return false;
+            }
+            search = search.next;
+        }
+
+        return true;
     }
 
     public int find (int value) {
@@ -72,7 +96,7 @@ public class LinkedList {
             return head.value;
         }
 
-        for (int i = 0; i < index + 1; i++) {
+        for (int i = 0; i < index; i++) {
             search = search.next;
         }
 

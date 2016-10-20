@@ -21,12 +21,34 @@ public class LinkedListTest {
     }
 
     @Test
-    public void removeTest () {
+    public void addMultipleTest () {
+
         linkedList.add(1);
         linkedList.add(2);
-        linkedList.remove(1);
+        linkedList.add(3);
+
+        assertEquals("The added value of 3 should be returned.", 3, linkedList.get(2));
+
+    }
+
+    @Test
+    public void removeFirstTest () {
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.remove(0);
 
         assertEquals("The value 1 should have been removed so that 2 took its place.", 2, linkedList.get(0));
+
+    }
+
+    @Test
+    public void removeOtherTest () {
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.remove(1);
+
+        assertTrue("The values should be 1, 3.", linkedList.containsInOrder(1, 3));
 
     }
 
