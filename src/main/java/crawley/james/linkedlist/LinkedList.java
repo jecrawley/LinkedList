@@ -19,6 +19,10 @@ public class LinkedList {
             this.value = value;
         }
 
+        public int getValue () {
+            return value;
+        }
+
     }
 
     public void add (int value) {
@@ -124,5 +128,18 @@ public class LinkedList {
     public void sort () {
 
     }
+
+    public Node getHead () {
+
+        return head;
+
+    }
+
+    public Node getTail () {
+
+        return tail;
+
+    }
+
 
 }

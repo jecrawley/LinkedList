@@ -21,6 +21,24 @@ public class LinkedListTest {
     }
 
     @Test
+    public void getHead () {
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+
+        assertEquals("The head should have a value of 1", 1, linkedList.getHead().getValue());
+    }
+
+    @Test
+    public void getTail () {
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+
+        assertEquals("The head should have a value of 3", 3, linkedList.getTail().getValue());
+    }
+
+    @Test
     public void addMultipleTest () {
 
         linkedList.add(1);
