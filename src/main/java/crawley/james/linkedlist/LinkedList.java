@@ -134,26 +134,28 @@ public class LinkedList {
     public void sort () {
 
         boolean changed;
-        Node temp0;
-        Node temp1;
-        Node temp2;
+        Node current;
+        Node next;
+        Node previous;
 
         do {
             changed = false;
+
             for (int i = 0; i < size - 1; i++) {
-                temp0 = this.get(i);
-                temp1 = this.get(i + 1);
-                temp2 = this.get(i - 1);
-                if (temp0.value > temp1.value) {
+
+                current = this.get(i);
+                next = this.get(i + 1);
+                previous = this.get(i - 1);
+
+                if (current.value > next.value) {
+
+                    current.next = next.next;
+                    next.next = current;
 
                     if (i == 0) {
-                        temp0.next = temp1.next;
-                        temp1.next = temp0;
-                        head = temp1;
+                        head = next;
                     } else {
-                        temp0.next = temp1.next;
-                        temp1.next = temp0;
-                        temp2.next = temp1;
+                        previous.next = next;
                     }
 
                     changed = true;
